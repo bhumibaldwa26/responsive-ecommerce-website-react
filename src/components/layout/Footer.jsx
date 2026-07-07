@@ -26,11 +26,11 @@ const Footer = () => {
         <div className="space-y-4">
           <h4 className="text-sm font-bold text-white uppercase tracking-wider">Support</h4>
           <p className="text-xs text-slate-400 leading-relaxed">
-            111 Bijoy Sarani, Dhaka, <br />
-            DH 1515, Bangladesh.
+            Address <br />
+            Musakhedi
           </p>
           <p className="text-xs text-slate-400">exclusive@gmail.com</p>
-          <p className="text-xs text-slate-400">+88015-88888-9999</p>
+          <p className="text-xs text-slate-400">+11111-88888-9999</p>
         </div>
 
         {/* Quick Links 1 */}

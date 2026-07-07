@@ -14,6 +14,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ContactPage from "./components/contact/ContactPage";
+import Signin from "./components/Auth/Signin";
+import Signup from "./components/Auth/Signup";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -36,6 +38,8 @@ const router = createBrowserRouter(
       <Route path="/products/:id" element={<ProductDetails />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/wishlist" element={<Wishlist />} />
+      <Route path="/signin" element={<Signin />} />
+      <Route path="/signup" element={<Signup />} />
     </Route>
   )
 );

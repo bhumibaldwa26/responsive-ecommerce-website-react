@@ -16,6 +16,7 @@ import { useGetProductQuery } from "../../redux/features/apiSlice";
 import { addToCart } from "../../redux/features/cartSlice";
 import { toggleWishlist } from "../../redux/features/wishlistSlice";
 
+
 const ProductDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -272,13 +273,13 @@ const ProductDetails = () => {
             </div>
 
             {/* Add to Cart button */}
-            <button
-              onClick={handleAddToCart}
-              className="flex-grow flex items-center justify-center gap-2 px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-bold text-sm rounded-lg shadow-sm shadow-red-100 hover:shadow-md hover:scale-[1.01] transition-all duration-200"
-            >
-              <IoCartOutline className="w-4 h-4" />
-              Add to Cart
-            </button>
+             <button
+                 onClick={handleAddToCart}
+                 className="flex-grow flex items-center justify-center gap-2 px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-bold text-sm rounded-lg shadow-sm shadow-red-100 hover:shadow-md hover:scale-[1.01] transition-all duration-200"
+               >
+                 <IoCartOutline className="w-4 h-4" />
+                 Add to Cart
+               </button>
 
             {/* Wishlist toggle icon */}
             <button
