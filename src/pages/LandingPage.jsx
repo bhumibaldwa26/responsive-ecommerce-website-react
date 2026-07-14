@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import { ChevronRightIcon } from "@radix-ui/react-icons";
-import { useGetCategoriesQuery } from "../../redux/features/apiSlice";
-import img from "../../assets/landingBanner.png";
+import { useGetCategoriesQuery } from "../redux/features/apiSlice";
+import img from "../assets/landingBanner.png";
 
 function LandingPage() {
   const [searchParams, setSearchParams] = useSearchParams();

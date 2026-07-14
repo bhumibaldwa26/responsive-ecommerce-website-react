@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useGetProductsQuery, useGetCategoriesQuery } from "../../redux/features/apiSlice";
-import ProductCard from "./ProductCard";
+import { useGetProductsQuery, useGetCategoriesQuery } from "../redux/features/apiSlice";
+import ProductCard from "../components/product/ProductCard";
 
 const ProductPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
