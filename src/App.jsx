@@ -1,19 +1,19 @@
 import RootLayout from "./components/layout/RootLayout";
 import About from "./components/about/About";
-import LandingPage from "./components/home/LandingPage";
+import LandingPage from "./pages/LandingPage";
 import NewArrival from "./components/home/NewArrival";
-import ProductPage from "./components/product/ProductPage";
+import ProductPage from "./pages/ProductPage";
 import ProductDetails from "./components/product/ProductDetails";
 import Cart from "./components/cart/Cart";
 import Wishlist from "./components/wishlist/Wishlist";
-import SearchResultsPage from "./components/product/SearchResultsPage";
+import SearchResultsPage from "./pages/SearchResultsPage";
 import {
   createBrowserRouter,
   Route,
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import ContactPage from "./components/contact/ContactPage";
+import ContactPage from "./pages/ContactPage";
 import Signin from "./components/Auth/Signin";
 import Signup from "./components/Auth/Signup";
 
@@ -40,8 +40,8 @@ const router = createBrowserRouter(
       <Route path="/wishlist" element={<Wishlist />} />
       <Route path="/signin" element={<Signin />} />
       <Route path="/signup" element={<Signup />} />
-    </Route>
-  )
+    </Route>,
+  ),
 );
 
 function App() {

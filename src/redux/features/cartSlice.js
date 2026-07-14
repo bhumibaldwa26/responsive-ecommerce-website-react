@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCartItems, saveCartItems } from "../../components/utils/localStorage";
+import { getCartItems, saveCartItems } from "../../utils/localStorage";
 
 const calculateTotals = (items) => {
   let totalQuantity = 0;

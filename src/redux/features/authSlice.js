@@ -1,9 +1,8 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { supabase } from "../../supabaseClient";
 
-// ----------------------------
 // Sign Up
-// ----------------------------
+
 export const signUpNewUser = createAsyncThunk(
   "auth/signUp",
   async ({ email, password }, { rejectWithValue }) => {
@@ -24,9 +23,9 @@ export const signUpNewUser = createAsyncThunk(
     return data;
   },
 );
-// ----------------------------
+
 // Sign In
-// ----------------------------
+
 export const signInUser = createAsyncThunk(
   "auth/signIn",
   async ({ email, password }, { rejectWithValue }) => {
@@ -43,9 +42,8 @@ export const signInUser = createAsyncThunk(
   },
 );
 
-// ----------------------------
 // Sign Out
-// ----------------------------
+
 export const signOutUser = createAsyncThunk(
   "auth/signOut",
   async (_, { rejectWithValue }) => {
@@ -59,9 +57,9 @@ export const signOutUser = createAsyncThunk(
   },
 );
 
-// ----------------------------
+
 // Get Existing Session
-// ----------------------------
+
 export const getSession = createAsyncThunk(
   "auth/getSession",
   async (_, { rejectWithValue }) => {
@@ -104,9 +102,9 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     builder
 
-      // ----------------------------
+   
       // Get Session
-      // ----------------------------
+     
       .addCase(getSession.pending, (state) => {
         state.loading = true;
       })
@@ -121,9 +119,9 @@ const authSlice = createSlice({
         state.error = action.payload;
       })
 
-      // ----------------------------
+
       // Sign Up
-      // ----------------------------
+
       .addCase(signUpNewUser.pending, (state) => {
         state.loading = true;
       })
@@ -136,9 +134,9 @@ const authSlice = createSlice({
         state.error = action.payload;
       })
 
-      // ----------------------------
+     
       // Sign In
-      // ----------------------------
+     
       .addCase(signInUser.pending, (state) => {
         state.loading = true;
       })
@@ -153,9 +151,9 @@ const authSlice = createSlice({
         state.error = action.payload;
       })
 
-      // ----------------------------
+     
       // Sign Out
-      // ----------------------------
+     
       .addCase(signOutUser.pending, (state) => {
         state.loading = true;
       })

@@ -88,7 +88,7 @@ const Cart = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 text-slate-700 text-sm">
-                  {cartItems.map((item) => {
+                  {cartItems?.map((item) => {
                     const displayImage = item.thumbnail || (Array.isArray(item.images) ? item.images[0] : item.images);
                     return (
                       <tr key={item.id} className="hover:bg-slate-50/50 transition-colors">

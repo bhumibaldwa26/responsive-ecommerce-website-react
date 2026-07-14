@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { signOutUser } from "../redux/features/authSlice";
 
 import {
-  IoPersonCircleOutline,
   IoHeartOutline,
   IoCartOutline,
   IoSearchOutline,
@@ -187,7 +186,7 @@ const NavigationMenuDemo = () => {
               <Link
                 to="/signin"
                 onClick={() => setMenuOpen(false)}
-                className="block py-2 px-3 rounded-md text-sm font-medium text-slate-700 hover:bg-slate-50 border-t pt-3 mt-3"
+                className="hidden md:block px-5 py-2 rounded-lg bg-slate-900 text-white hover:bg-red-500 transition"
               >
                 Sign In
               </Link>

@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  signUpNewUser,
-  clearError,
-} from "../../redux/features/authSlice";
+import { signUpNewUser, clearError } from "../../redux/features/authSlice";
 
 const Signup = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { loading, error, session } = useSelector(
-    (state) => state.auth
-  );
+  const { loading, error, session } = useSelector((state) => state.auth);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,7 +19,7 @@ const Signup = () => {
       signUpNewUser({
         email,
         password,
-      })
+      }),
     );
 
     if (signUpNewUser.fulfilled.match(resultAction)) {
@@ -53,10 +48,13 @@ const Signup = () => {
   return (
     <div>
       <form onSubmit={handleSignUp} className="max-w-md m-auto pt-24">
-        <h2 className="font-bold pb-2">Sign up today!</h2>
+        <h2 className="font-bold pb-2 text-center">Sign up today!</h2>
 
-        <p>
-          Already have an account? <Link to="/">Sign In</Link>
+        <p className="text-center">
+          Already have an account?{" "}
+          <Link to="/signin" className="hover:text-blue-500">
+            Sign In
+          </Link>
         </p>
 
         <div className="flex flex-col py-4">
@@ -79,19 +77,11 @@ const Signup = () => {
           />
         </div>
 
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full mt-4"
-        >
+        <button type="submit" disabled={loading} className="w-full mt-4">
           {loading ? "Creating Account..." : "Sign Up"}
         </button>
 
-        {error && (
-          <p className="text-red-600 text-center pt-4">
-            {error}
-          </p>
-        )}
+        {error && <p className="text-red-600 text-center pt-4">{error}</p>}
       </form>
     </div>
   );
