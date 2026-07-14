@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signInUser } from "../../redux/features/authSlice";
@@ -19,7 +19,7 @@ const Signin = () => {
       signInUser({
         email,
         password,
-      })
+      }),
     );
 
     // Check whether login succeeded
@@ -38,10 +38,13 @@ const Signin = () => {
   return (
     <div>
       <form onSubmit={handleSignIn} className="max-w-md m-auto pt-24">
-        <h2 className="font-bold pb-2">Sign In</h2>
+        <h2 className="font-bold pb-2 text-center ">Sign In</h2>
 
-        <p>
-          Don't have an account yet? <Link to="/signup">Sign Up</Link>
+        <p className="text-center">
+          Don&apos;t have an account yet?{" "}
+          <Link to="/signup" className="hover:text-blue-500">
+            Sign Up
+          </Link>
         </p>
 
         <div className="flex flex-col py-4">
@@ -66,17 +69,13 @@ const Signin = () => {
 
         <button
           type="submit"
-          className="w-full mt-4"
+          className="w-full mt-4  py-3"
           disabled={loading}
         >
           {loading ? "Signing In..." : "Sign In"}
         </button>
 
-        {error && (
-          <p className="text-red-600 text-center pt-4">
-            {error}
-          </p>
-        )}
+        {error && <p className="text-red-600 text-center pt-4">{error}</p>}
       </form>
     </div>
   );

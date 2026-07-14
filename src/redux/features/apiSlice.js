@@ -22,6 +22,7 @@ export const apiSlice = createApi({
 
         return `${path}${queryParams}`;
       },
+      providesTags: ["Product"],
     }),
 
     getProduct: builder.query({
@@ -38,6 +39,7 @@ export const apiSlice = createApi({
         method: "POST",
         body: product,
       }),
+      invalidatesTags: ["Product"],
     }),
 
     updateProduct: builder.mutation({
@@ -65,3 +67,6 @@ export const {
   useUpdateProductMutation,
   useDeleteProductMutation,
 } = apiSlice;
+
+
+

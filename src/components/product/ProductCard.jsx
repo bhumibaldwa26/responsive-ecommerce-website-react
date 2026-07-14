@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import { toast } from "sonner";
 import { addToCart } from "../../redux/features/cartSlice";
 import { toggleWishlist } from "../../redux/features/wishlistSlice";
+import { Route } from "../../constant/route";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const ProductCard = ({ product }) => {
   );
 
   const handleClick = () => {
-    navigate(`/products/${product.id}`);
+    navigate(Route.PRODUCT_DETAILS(product.id));
   };
 
   const handleWishlistToggle = (e) => {
@@ -69,7 +70,7 @@ const ProductCard = ({ product }) => {
           {isWishlisted ? (
             <IoHeart className="w-5 h-5 text-red-500 animate-pulse" />
           ) : (
-            <IoHeartOutline className="w-5 h-5" />
+            <IoHeartOutline className="size-5" />
           )}
         </button>
 
