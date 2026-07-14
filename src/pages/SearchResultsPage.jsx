@@ -1,8 +1,8 @@
 import { useLocation, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { IoSearchOutline, IoFilterOutline } from "react-icons/io5";
-import { useGetProductsQuery } from "../../redux/features/apiSlice";
-import ProductCard from "./ProductCard";
+import { useGetProductsQuery } from "../redux/features/apiSlice";
+import ProductCard from "../components/product/ProductCard";
 
 const SearchResultsPage = () => {
   const location = useLocation();
