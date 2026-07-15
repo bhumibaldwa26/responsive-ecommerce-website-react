@@ -42,6 +42,9 @@ const router = createBrowserRouter(
       <Route path="/signup" element={<Signup />} />
     </Route>,
   ),
+  {
+    basename: "/responsive-ecommerce-website-react",
+  }
 );
 
 function App() {
